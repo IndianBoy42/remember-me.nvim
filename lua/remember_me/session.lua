@@ -39,12 +39,12 @@ function Session:save()
 end
 
 function Session:load()
-	local session = self.store .. self.name .. self.ext
-	local session_exists = vim.fn.filereadable(vim.fn.expand(session)) == 1
-	if session_exists then
-		local srouce_cmd = vim.api.nvim_parse_cmd("source " .. session, {})
-		vim.api.nvim_cmd(srouce_cmd, {})
-	end
+    local session = self.store .. self.name .. self.ext
+    local session_exists = vim.fn.filereadable(vim.fn.expand(session)) == 1
+    if session_exists then
+        local srouce_cmd = vim.api.nvim_parse_cmd("silent! source " .. session, {})
+        vim.api.nvim_cmd(srouce_cmd, {})
+    end
 end
 
 function Session:delete()
