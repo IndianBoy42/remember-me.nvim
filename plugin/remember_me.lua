@@ -10,8 +10,8 @@ end, {
 	nargs = 0,
 })
 
-vim.api.nvim_create_user_command("Remember", function()
-	require("remember_me").recall()
+vim.api.nvim_create_user_command("Recall", function()
+    require("remember_me").recall()
 end, {
 	desc = "Try to load last session",
 })
